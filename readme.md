@@ -37,4 +37,4 @@ Given the code
 >>> sensor = SensorAdaptor(pin_number=10, is_inverting=False)
 >>> mqtt = DeviceMQTTPubWrapper(device=sensor, name='output')
 ```
-A message with payload '1' will be publishes to topic 'output' when pin 10 is activated, and payload '0' when deactivated.
+A message with payload '1' will be published under topic 'output' when pin 10 is activated, and payload '0' when deactivated.
