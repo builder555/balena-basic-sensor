@@ -14,20 +14,20 @@ Add the following to your `docker-compose.yaml`:
     build: ./basic-sensor
     restart: always
     environment:
-      - output=sensor_1
-      - pin=17
+      - OUTPUT=sensor_1
+      - PIN=17
 ```
-A message with payload "1" is published on `output` topic when the pin is high and "0" when pin is low.
+A message with payload "1" is published on `OUTPUT` topic when the pin is high and "0" when pin is low.
 
 ___Available variables___
-- `output`: name of MQTT topic to publish
-- `pin`: physical pin to use on the device
-- `inverting`: whether the output should be inverted, i.e. if set to 'true', will send '0' when pin is high and '1' when low
+- `OUTPUT`: name of MQTT topic to publish
+- `PIN`: physical pin to use on the device
+- `INVERTING`: whether the output should be inverted, i.e. if set to 'true', will send '0' when pin is high and '1' when low
 
 ___Environment variables defaults___
-- `output`: "output"
-- `pin`: 17
-- `inverting`: false
+- `OUTPUT`: "output"
+- `PIN`: 17
+- `INVERTING`: false
 
 ___Tests___
 
