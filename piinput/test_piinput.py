@@ -78,6 +78,17 @@ class TestPiInputAdaptor:
             fake_button.is_pressed = False
             assert sensor.is_on == True
 
+    def test_does_not_throw_exceptions_when_handlers_are_not_set(self, fake_button, fake_timer):
+        with patch('piinput.main.Timer', new=fake_timer),\
+                patch('piinput.main.Button', return_value=fake_button):
+            fake_button.is_pressed = False
+            sensor = SensorAdaptor(5)
+            sensor.auto_trigger(period=10)
+            sensor.on_inactive = None
+            sensor.on_active = None
+            fake_timer.forward(seconds=20)
+            fake_button.is_pressed = True
+            fake_timer.forward(seconds=20)
 # in gpiozero library a good pin reader is a button
 # so we use button-like properties in this adaptor
 @pytest.fixture

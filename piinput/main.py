@@ -46,8 +46,8 @@ class SensorAdaptor(AbstractSensor):
         self.timer.start()
 
     def __trigger_status_update(self):
-        if self.is_on:
+        if self.is_on and self.__on_active:
             self.__on_active()
-        else:
+        if not self.is_on and self.__on_inactive:
             self.__on_inactive()
         self.__start_update_timer()
