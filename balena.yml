@@ -1,0 +1,22 @@
+name: basic-sensor
+description: >-
+  monitors a pin and sends the value as a MQTT event
+version: 0.1.0
+type: sw.application
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: 'https://github.com/builder555/balena-basic-sensor'
+  logo:
+    type: blob.asset
+    data:
+      url: 'https://raw.githubusercontent.com/builder555/balena-basic-sensor/master/logo.png'
+data:
+  defaultDeviceType: raspberrypi3
+  supportedDeviceTypes:
+    - raspberrypi4-64
+    - fincm3
+    - raspberrypi3
+    - raspberrypi3-64
+    - raspberrypi400-64

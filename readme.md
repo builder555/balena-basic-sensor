@@ -54,3 +54,5 @@ Given the code
 A message with payload '1' will be published under topic 'output' when pin 10 is activated, and payload '0' when deactivated.
 
 > N.B. mqtt connects to host 'mqtt' on port 1883
+
+_logo image by [heztasia](https://thenounproject.com/heztasia/)_
